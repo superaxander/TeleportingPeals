@@ -1,0 +1,37 @@
+group 'alexanders.mods.teleportationpearls'
+version '1.0-SNAPSHOT'
+
+buildscript {
+    ext.kotlin_version = '1.1.2-2'
+
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        
+    }
+}
+apply plugin: 'kotlin'
+
+sourceCompatibility = 1.8
+
+sourceSets {
+    main.java.srcDirs += 'src/main/kotlin/'
+}
+
+
+repositories {
+    mavenCentral()
+    maven { url 'https://jitpack.io' }
+}
+
+dependencies {
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jre8:$kotlin_version"
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile 'com.github.Ellpeck:RockBottomAPI:master-SNAPSHOT'
+}
+
+jar {
+    from { configurations.compile.filter{it.name.contains("kotlin")}collect { it.isDirectory() ? it : zipTree(it) } }
+}
