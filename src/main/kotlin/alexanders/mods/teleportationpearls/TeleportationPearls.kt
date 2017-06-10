@@ -33,10 +33,10 @@ class TeleportationPearls : IMod {
         RockBottomAPI.getEventHandler().registerListener(EntityTickEvent::class.java, object : IEventListener<EntityTickEvent> {
             var cooldown = 0
             override fun listen(p0: EventResult, p1: EntityTickEvent): EventResult {
-                if (p1.entity is AbstractEntityPlayer) {
+                if (p1.entity is AbstractEntityPlayer && cooldown-- <= 0) {
                     val player = p1.entity as AbstractEntityPlayer
                     if (player.inv[player.selectedSlot] != null && player.inv[player.selectedSlot].item is TeleportationPearl) {
-                        if (RockBottomAPI.getGame().container.input.isMouseButtonDown(0) && cooldown-- <= 0) {
+                        if (RockBottomAPI.getGame().container.input.isMouseButtonDown(0)) {
                             player.inv[player.selectedSlot].removeAmount(1)
                             if (player.inv[player.selectedSlot].amount <= 0)
                                 player.inv[player.selectedSlot] = null
