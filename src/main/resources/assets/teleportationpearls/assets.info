@@ -1,2 +1,3 @@
 tex.items.pearl=/item/pearl.png
-loc_us_english=/loc/us_english.loc
+tex.items.bouncy_pearl=/item/bouncy_pearl.png
+loc.us_english=/loc/us_english.loc

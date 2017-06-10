@@ -1,1 +1,4 @@
-item.pearl=Teleportation Pearl
+teleportationpearls/item.pearl=Teleportation Pearl
+teleportationpearls/item.bouncy_pearl=Bouncy Teleportation Pearl
+teleportationpearls/desc=A pearl that teleports you. What else did you expect?
+teleportationpearls/descBouncy=A teleporation pearl that bounces. What else did you expect?
