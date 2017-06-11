@@ -1,5 +1,6 @@
 Teleportation Pearls
 ====================
+## **Has been rewritten please go to:** https://github.com/superaxander/LotsOfPearl  
 Run 
 ```
 gradlew jar
